@@ -1,5 +1,10 @@
 {
-    "Incorrect email or password": "Email ou mot de passe incorrect.",
-    "customer area": "espace client",
-    "admin backoffice": "administration"
+    "Admin backoffice": "Administration",
+    "Customer area": "Espace client",
+    "Edit": "Modifier",
+    "Password": "Mot de passe",
+    "Personal informations": "Informations personnelles",
+    "Welcome :firstname :lastname": "Bienvenue :firstname :lastname",
+    "Your customer area": "Votre espace client",
+    "You could change your password at any moment.": "Vous pouvez modifier votre mot de passe quand vous le souhaitez."
 }

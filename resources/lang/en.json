@@ -1,5 +1,11 @@
 {
-    "incorrect email or password": "incorrect email or password",
-    "customer area": "customer area",
-    "admin backoffice": "admin backoffice"
+    "Admin backoffice": "Admin backoffice",
+    "Customer area": "Customer area",
+    "Edit": "Edit",
+    "Password": "Password",
+    "Personal informations": "Personal informations",
+    "Welcome :firstname :lastname": "Welcome :firstname :lastname",
+    "Your customer area": "Your customer area",
+    "You could change your password at any moment.": "You could change your password at any moment."
+
 }

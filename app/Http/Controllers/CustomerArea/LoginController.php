@@ -30,7 +30,7 @@ class LoginController extends Controller
             return redirect()->intended(self::REDIRECT_AFTER_LOGIN);
         }
 
-        return back()->withInput()->withErrors(__('Incorrect email or password'));
+        return back()->withInput()->withErrors(__('auth.failed'));
     }
 
     public function logout()

@@ -1,12 +1,12 @@
-@extends('templates.customer')
+@extends('templates.public')
 
 @section('page.content')
 
-    @include('components.alerts.errors')
+    <div class="row justify-content-center py-5">
+        <div class="col-xxxl-3">
+            @include('components.alerts.errors')
 
-    <div class="row">
-        <div class="col-12">
-            <form action="{{route('customer_area.register')}}" method="POST">
+            <form action="{{route('customer_area.register')}}" method="POST" class="p-3 bg-light shadow-sm">
                 @csrf
                 <div class="form-group">
                     <label for="firstname">Prénom</label>

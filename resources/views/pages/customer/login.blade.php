@@ -2,11 +2,11 @@
 
 @section('page.content')
 
-    @include('components.alerts.errors')
+    <div class="row justify-content-center py-5">
+        <div class="col-xxxl-3">
+            @include('components.alerts.errors')
 
-    <div class="row">
-        <div class="col-12">
-            <form action="{{route('customer_area.login')}}" method="POST">
+            <form action="{{route('customer_area.login')}}" method="POST" class="p-3 bg-light shadow-sm">
                 @csrf
                 <div class="form-group">
                     <label for="email">Email</label>
