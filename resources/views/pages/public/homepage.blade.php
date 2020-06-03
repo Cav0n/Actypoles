@@ -5,6 +5,14 @@
     <div class="row py-4">
         <div class="col-12">
             <h1 class="h4">Nos activité</h1>
+
+            <div class="row">
+                @foreach (\App\Pole::all() as $pole)
+                    <div class="col-xxxl-3">
+                        <p>{{$pole->title}}</p>
+                    </div>
+                @endforeach
+            </div>
         </div>
     </div>
 
