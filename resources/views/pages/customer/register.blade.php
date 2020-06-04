@@ -2,8 +2,8 @@
 
 @section('page.content')
 
-    <div class="row justify-content-center py-5">
-        <div class="col-xxxl-3">
+    <div class="row justify-content-center py-3">
+        <div class="col-md-8 col-lg-6 col-xxxl-3">
             @include('components.alerts.errors')
 
             <form action="{{route('customer_area.register')}}" method="POST" class="p-3 bg-light shadow-sm border">

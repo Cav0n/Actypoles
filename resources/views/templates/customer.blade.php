@@ -4,8 +4,8 @@
 
 @section('page.content')
 
-    <div class="row py-5 justify-content-center">
-        <div class="col-xxxl-6">
+    <div class="row py-3 justify-content-center">
+        <div class="col-md-9 col-xxxl-6">
             <div class="bg-white shadow-sm border">
                 <div id="customer-area-header" class="bg-light">
                     <div class="p-3">
