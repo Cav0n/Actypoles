@@ -11,4 +11,14 @@ class CustomerAreaController extends Controller
     {
         return view('pages.customer.homepage');
     }
+
+    public function showPasswordForgotten()
+    {
+        return view('pages.customer.forgotten-password.check-email');
+    }
+
+    public function showPasswordReset(Request $request)
+    {
+        return view('pages.customer.forgotten-password.reset-password')->with(['id' => $request['id'], 'token' => $request['token']]);
+    }
 }

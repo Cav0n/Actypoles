@@ -5,6 +5,7 @@
     <div class="row justify-content-center py-3">
         <div class="col-md-8 col-lg-6 col-xxxl-3">
             @include('components.alerts.errors')
+            @include('components.alerts.success')
 
             <form action="{{route('customer_area.login')}}" method="POST" class="p-3 bg-light shadow-sm border">
                 @csrf
@@ -21,10 +22,12 @@
                 <div class="form-group">
                     <label for="password">{{__('Password')}}</label>
                     <input type="password" class="form-control" name="password" id="password" aria-describedby="helpPassword">
-                    <small id="helpPassword" class="form-text text-muted">{{__('Password forgotten ?')}}</small>
+                    <small id="helpPassword" class="form-text text-muted">
+                        <a href="{{route('customer_area.password-forgotten')}}">{{__('Password forgotten ?')}}</a>
+                    </small>
                 </div>
 
-                <button type="submit" class="btn btn-primary">{{__('Login')}}</button>
+                <button type="submit" class="btn btn-secondary">{{__('Login')}}</button>
             </form>
         </div>
     </div>

@@ -4,7 +4,7 @@
 
     <div class="row justify-content-center py-3">
         <div class="col-md-8 col-lg-6 col-xxxl-3">
-            <a class="btn btn-secondary mb-3" href="{{route('customer_area.login')}}" role="button">< {{__('Login')}}</a>
+            <a class="btn btn-outline-primary mb-3" href="{{route('customer_area.login')}}" role="button">< {{__('Login')}}</a>
 
             @include('components.alerts.errors')
 
@@ -36,7 +36,7 @@
                     <small id="helpPasswordConfirmation" class="form-text text-muted">{{__('We want you to be sure of the password you typed.')}}</small>
                 </div>
 
-                <button type="submit" class="btn btn-primary">{{__('Create my account')}}</button>
+                <button type="submit" class="btn btn-secondary">{{__('Create my account')}}</button>
             </form>
         </div>
     </div>

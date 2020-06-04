@@ -24,6 +24,11 @@ Route::name('customer_area.')->prefix('customer-area')->group(function () {
         Route::post('login', 'CustomerArea\LoginController@authenticate')->name('login');
         Route::get('register', 'CustomerArea\RegisterController@showRegisterPage')->name('register');
         Route::post('register', 'CustomerArea\RegisterController@register')->name('register');
+
+        Route::get('password-forgotten', 'CustomerArea\CustomerAreaController@showPasswordForgotten')->name('password-forgotten');
+        Route::post('password-forgotten', 'UserController@sendPasswordResetLink')->name('password-forgotten');
+        Route::get('reset-password', 'CustomerArea\CustomerAreaController@showPasswordReset')->name('reset-password');
+        Route::post('reset-password', 'UserController@resetPassword')->name('reset-password');
     });
 
     // Routes only for authenticated users

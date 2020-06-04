@@ -75,4 +75,11 @@ class User extends Authenticatable
             'new_password' => 'required|confirmed|regex:/'.self::PASSWORD_REGEX.'/i',
         ]);
     }
+
+    public static function validatorResetPassword(Request $request)
+    {
+        return Validator::make($request->all(), [
+            'new_password' => 'required|confirmed|regex:/'.self::PASSWORD_REGEX.'/i',
+        ]);
+    }
 }
