@@ -6,5 +6,7 @@
     "Personal informations": "Informations personnelles",
     "Welcome :firstname :lastname": "Bienvenue :firstname :lastname",
     "Your customer area": "Votre espace client",
-    "You could change your password at any moment.": "Vous pouvez modifier votre mot de passe quand vous le souhaitez."
+    "You could change your password at any moment.": "Vous pouvez modifier votre mot de passe quand vous le souhaitez.",
+    "Login": "S'identifier",
+    "Register": "S'enregistrer"
 }
