@@ -30,5 +30,8 @@ Route::name('customer_area.')->prefix('customer-area')->group(function () {
     Route::middleware('auth')->group(function () {
         Route::get('/', 'CustomerArea\CustomerAreaController@showHomepage')->name('homepage');
         Route::get('logout', 'CustomerArea\LoginController@logout')->name('logout');
+
+        Route::post('/update/personal-informations/{user}', 'UserController@updatePersonalInformations')->name('update.personal-informations');
+        Route::post('/update/password/{user}', 'UserController@updatePassword')->name('update.password');
     });
 });

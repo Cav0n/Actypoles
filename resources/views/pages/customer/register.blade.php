@@ -4,6 +4,8 @@
 
     <div class="row justify-content-center py-3">
         <div class="col-md-8 col-lg-6 col-xxxl-3">
+            <a class="btn btn-secondary mb-3" href="{{route('customer_area.login')}}" role="button">< {{__('Login')}}</a>
+
             @include('components.alerts.errors')
 
             <form action="{{route('customer_area.register')}}" method="POST" class="p-3 bg-light shadow-sm border">
@@ -11,30 +13,30 @@
 
                 <h1>{{__('Register')}}</h1>
                 <div class="form-group">
-                    <label for="firstname">Prénom</label>
+                    <label for="firstname">{{__('Firstname')}}</label>
                     <input type="text" class="form-control @if($errors->has('firstname')) is-invalid @endif" name="firstname" id="firstname" value="{{old('firstname')}}">
                 </div>
                 <div class="form-group">
-                    <label for="lastname">Nom de famille</label>
+                    <label for="lastname">{{__('Lastname')}}</label>
                     <input type="text" class="form-control @if($errors->has('lastname')) is-invalid @endif" name="lastname" id="lastname" value="{{old('lastname')}}">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email">{{__('Email')}}</label>
                     <input type="text" class="form-control @if($errors->has('email')) is-invalid @endif" name="email" id="email" aria-describedby="helpEmail" value="{{old('email')}}">
-                    <small id="helpEmail" class="form-text text-muted">Votre adresse email (elle vous servira a vous connecter)</small>
+                    <small id="helpEmail" class="form-text text-muted">{{__('We use your email address to login you and send you notifications about your account.')}}</small>
                 </div>
                 <div class="form-group">
-                    <label for="password">Mot de passe</label>
-                    <input type="text" class="form-control @if($errors->has('password')) is-invalid @endif" name="password" id="password" aria-describedby="helpPassword">
-                    <small id="helpPassword" class="form-text text-muted">Votre mot de passe doit comporter au moins 8 caractères dont 1 majuscule, 1 chiffre et un caractère spécial.</small>
+                    <label for="password">{{__('Password')}}</label>
+                    <input type="password" class="form-control @if($errors->has('password')) is-invalid @endif" name="password" id="password" aria-describedby="helpPassword">
+                    <small id="helpPassword" class="form-text text-muted">{{__('Your password must contain at least 8 characters including 1 capital letter, 1 number and a special character.')}}</small>
                 </div>
                 <div class="form-group">
-                    <label for="password_confirmation">Confirmation du mot de passe</label>
-                    <input type="text" class="form-control @if($errors->has('password_confirmation')) is-invalid @endif" name="password_confirmation" id="password_confirmation" aria-describedby="helpPasswordConfirmation">
-                    <small id="helpPasswordConfirmation" class="form-text text-muted">Nous voulons nous assurer que vous écrivez le bon mot de passe.</small>
+                    <label for="password_confirmation">{{__('Password confirmation')}}</label>
+                    <input type="password" class="form-control @if($errors->has('password_confirmation')) is-invalid @endif" name="password_confirmation" id="password_confirmation" aria-describedby="helpPasswordConfirmation">
+                    <small id="helpPasswordConfirmation" class="form-text text-muted">{{__('We want you to be sure of the password you typed.')}}</small>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Créer mon compte</button>
+                <button type="submit" class="btn btn-primary">{{__('Create my account')}}</button>
             </form>
         </div>
     </div>
