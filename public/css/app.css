@@ -12921,6 +12921,10 @@ a.text-dark:focus {
   }
 }
 
+body {
+  font-family: "Hind Madurai", sans-serif;
+}
+
 p {
   margin: 0;
 }

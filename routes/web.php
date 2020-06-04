@@ -36,7 +36,21 @@ Route::name('customer_area.')->prefix('customer-area')->group(function () {
         Route::get('/', 'CustomerArea\CustomerAreaController@showHomepage')->name('homepage');
         Route::get('logout', 'CustomerArea\LoginController@logout')->name('logout');
 
-        Route::post('/update/personal-informations/{user}', 'UserController@updatePersonalInformations')->name('update.personal-informations');
-        Route::post('/update/password/{user}', 'UserController@updatePassword')->name('update.password');
+        Route::post('update/personal-informations/{user}', 'UserController@updatePersonalInformations')->name('update.personal-informations');
+        Route::post('update/password/{user}', 'UserController@updatePassword')->name('update.password');
+    });
+});
+
+Route::name('admin.')->prefix('admin')->group(function () {
+
+    // Routes only for guests
+    Route::middleware('isNotAdmin')->group(function () {
+        Route::get('login', 'BackOffice\LoginController@showLoginPage')->name('login');
+        Route::post('login', 'BackOffice\LoginController@authenticate')->name('login');
+    });
+
+    // Routes only for admins
+    Route::middleware('isAdmin')->group(function () {
+        Route::get('/', 'BackOffice\BackOfficeController@showHomepage')->name('homepage');
     });
 });
