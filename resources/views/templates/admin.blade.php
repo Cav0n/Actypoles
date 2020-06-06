@@ -33,6 +33,9 @@
         </div>
     @else
         <div id="login-wrapper" class="col-xxxl-5 h-100 d-flex flex-column justify-content-center">
+            @include('components.alerts.errors')
+            @include('components.alerts.success')
+
             <div id="login-container" class="bg-white border shadow-sm p-3">
                 @yield('admin.content')
             </div>

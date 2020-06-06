@@ -28,4 +28,6 @@ class Pole extends Model
 
         return $this->i18ns()->where('lang', $lang)->first()->description;
     }
+
+
 }

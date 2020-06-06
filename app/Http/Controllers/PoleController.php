@@ -27,7 +27,7 @@ class PoleController extends Controller
      */
     public function create()
     {
-        return view('pages.admin.forms.pole-create');
+        return view('pages.admin.forms.pole');
     }
 
     /**
@@ -38,10 +38,14 @@ class PoleController extends Controller
      */
     public function store(Request $request)
     {
-        $code = $request['code'] ?? null;
+        PoleI18n::validator($request)->validate();
 
-        if (null === $code) {
+        if (null === $code = $request['code'] ?? null) {
             $code = preg_replace('/\s+/', '-', $request['title']);
+        }
+
+        if (Pole::where('code', $code)->exists()) {
+            return back()->withInput()->withErrors(['title' => 'Un pôle avec un code identique existe déjà.']);
         }
 
         $pole = new Pole();
@@ -55,7 +59,7 @@ class PoleController extends Controller
         $poleI18n->description = $request['description'];
         $poleI18n->save();
 
-        dd('OK');
+        return redirect(route('admin.poles.edit', ['pole' => $pole]))->with(['success' => 'Le pôle a été créé avec succés.']);
     }
 
     /**
@@ -77,7 +81,7 @@ class PoleController extends Controller
      */
     public function edit(Pole $pole)
     {
-        //
+        return view('pages.admin.forms.pole')->with(['pole' => $pole]);
     }
 
     /**

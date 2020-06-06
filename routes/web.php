@@ -58,6 +58,8 @@ Route::name('admin.')->prefix('admin')->group(function () {
 
         Route::get('poles', 'PoleController@index')->name('poles');
         Route::get('poles/create', 'PoleController@create')->name('poles.create');
-        Route::post('poles/create', 'PoleController@store')->name('poles.create');
+        Route::post('poles/create', 'PoleController@store')->name('poles.store');
+        Route::get('poles/{pole}', 'PoleController@edit')->name('poles.edit');
+        Route::post('poles/{pole}', 'PoleController@update')->name('poles.update');
     });
 });

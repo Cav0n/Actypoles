@@ -21,7 +21,7 @@
             <tr>
                 <td class="align-middle">{{$pole->title}}</td>
                 <td class="text-right">
-                    <a href="" class="btn btn-outline-secondary">Modifier</a>
+                    <a href="{{route('admin.poles.edit', ['pole' => $pole])}}" class="btn btn-outline-secondary">Modifier</a>
                 </td>
             </tr>
             @endforeach
