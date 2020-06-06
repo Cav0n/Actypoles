@@ -1,7 +1,7 @@
 <footer class="container-fluid bg-secondary text-light">
     <div class="row py-3">
         <div class="col-12 text-center">
-            <p>© Actypoles-Thiers 2019</p>
+            <p>© Actypoles-Thiers 2020</p>
         </div>
     </div>
 

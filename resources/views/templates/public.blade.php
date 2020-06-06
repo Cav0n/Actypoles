@@ -13,7 +13,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <title>@yield('page.title', config('app.name'))</title>
+    <title>@yield('page.title' . ' | ' . config('app.name'), config('app.name'))</title>
     <meta name="description" content="@yield('page.description')">
 </head>
 <body class="bg-secondary">

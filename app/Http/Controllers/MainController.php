@@ -10,4 +10,9 @@ class MainController extends Controller
     {
         return view('pages.public.homepage');
     }
+
+    public function showContactPage()
+    {
+        return view('pages.public.contact');
+    }  
 }
