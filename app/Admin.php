@@ -59,4 +59,19 @@ class Admin extends Model
             'password' => 'required|confirmed|regex:/'.self::PASSWORD_REGEX.'/i'
         ]);
     }
+
+    public static function check(\Illuminate\Http\Request $request): bool
+    {
+        if (! $request->session()->has('admin')) {
+            return false;
+        }
+
+        $admin = $request->session()->get('admin');
+
+        if (! Admin::where('id', $admin->id)->where('sessionToken', $admin->sessionToken)->exists()) {
+            return false;
+        }
+
+        return true;
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use App\Admin;
 use Closure;
+use \Illuminate\Http\Request;
 
 class IsAdmin
 {
@@ -14,15 +15,9 @@ class IsAdmin
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle(Request $request, Closure $next)
     {
-        if (! $request->session()->has('admin')) {
-            return redirect(route('admin.login'));
-        }
-
-        $admin = $request->session()->get('admin');
-
-        if (! Admin::where('id', $admin->id)->where('sessionToken', $admin->sessionToken)->exists()) {
+        if (! \App\Admin::check($request)) {
             return redirect(route('admin.login'));
         }
 

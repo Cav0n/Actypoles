@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Pole;
+use App\PoleI18n;
 use Illuminate\Http\Request;
 
 class PoleController extends Controller
@@ -14,7 +15,9 @@ class PoleController extends Controller
      */
     public function index()
     {
-        //
+        $poles = Pole::all();
+
+        return view('pages.admin.poles')->with(['poles' => $poles]);
     }
 
     /**
@@ -24,7 +27,7 @@ class PoleController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.admin.forms.pole-create');
     }
 
     /**
@@ -35,7 +38,24 @@ class PoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $code = $request['code'] ?? null;
+
+        if (null === $code) {
+            $code = preg_replace('/\s+/', '-', $request['title']);
+        }
+
+        $pole = new Pole();
+        $pole->code = $code;
+        $pole->save();
+
+        $poleI18n = new PoleI18n();
+        $poleI18n->pole_id = $pole->id;
+        $poleI18n->lang = $request['lang'] ?? null;
+        $poleI18n->title = $request['title'];
+        $poleI18n->description = $request['description'];
+        $poleI18n->save();
+
+        dd('OK');
     }
 
     /**

@@ -2,11 +2,11 @@
 
 namespace App\Console\Commands\Poles;
 
+use App\Console\Commands\ActypolesCommand;
 use App\Pole;
 use App\PoleI18n;
-use Illuminate\Console\Command;
 
-class CreateCommand extends Command
+class CreateCommand extends ActypolesCommand
 {
     /**
      * The name and signature of the console command.
@@ -39,6 +39,8 @@ class CreateCommand extends Command
      */
     public function handle()
     {
+        parent::handle();
+
         $code = $this->ask('Code (laissez vide pour générer automatiquement :');
         $title = $this->ask('Titre :');
         $description = $this->ask('Description :');

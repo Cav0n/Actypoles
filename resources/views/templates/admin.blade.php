@@ -12,23 +12,35 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/admin.css')}}">
 
-    <title>{{ config('app.name')}} | Administration - @yield('admin.title', __('Admin backoffice'))</title>
+    <title>{{ config('app.name')}} | Administration - @yield('admin.title', __('Homepage'))</title>
     <meta name="description" content="@yield('admin.description')">
 </head>
-<body id="admin" class="bg-light d-flex flex-column justify-content-center">
+<body id="admin" class="bg-light container-fluid" style="height: 100vh;">
 
-    <div class="container-fluid">
-        <div class="row justify-content-center py-3">
-            <div class="col-md-8 col-lg-6 col-xxxl-3">
-                @include('components.alerts.errors')
-                @include('components.alerts.success')
+    <div id="admin-wrapper" class="row h-100 justify-content-center">
+    @if (\App\Admin::check(request()))
+        <div id="sidenav" class="bg-secondary col-xxxl-1 h-100 p-3 d-flex flex-column justify-content-between">
+            @include('components.admin.sidenav')
+        </div>
 
-                <div class="p-3 bg-white shadow-sm border">
-                    @yield('admin.content')
-                </div>
+        <div id="content" class="col-11 p-3">
+            <div id="content-header" class="d-flex justify-content-between">
+                <h1>@yield('admin.title')</h1>
+                @yield('admin.content.header.options')
+            </div>
+
+            @yield('admin.content')
+        </div>
+    @else
+        <div id="login-wrapper" class="col-xxxl-5 h-100 d-flex flex-column justify-content-center">
+            <div id="login-container" class="bg-white border shadow-sm p-3">
+                @yield('admin.content')
             </div>
         </div>
+    @endif
     </div>
+
+
 
     {{-- Bootstrap JS & jQuery --}}
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>

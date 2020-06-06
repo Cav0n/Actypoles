@@ -3,10 +3,10 @@
 namespace App\Console\Commands\Admins;
 
 use App\Admin;
-use Illuminate\Console\Command;
+use App\Console\Commands\ActypolesCommand;
 use Illuminate\Support\Facades\Hash;
 
-class CreateCommand extends Command
+class CreateCommand extends ActypolesCommand
 {
     /**
      * The name and signature of the console command.
@@ -30,6 +30,7 @@ class CreateCommand extends Command
     public function __construct()
     {
         parent::__construct();
+
     }
 
     /**
@@ -39,6 +40,8 @@ class CreateCommand extends Command
      */
     public function handle()
     {
+        parent::handle();
+
         $firstname = $this->ask('Prénom');
         $lastname = $this->ask('Nom de famille');
         $nickname = $this->ask('Pseudo');

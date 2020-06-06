@@ -54,6 +54,10 @@ Route::name('admin.')->prefix('admin')->group(function () {
     // Routes only for admins
     Route::middleware('isAdmin')->group(function () {
         Route::get('', 'BackOffice\BackOfficeController@showHomepage')->name('homepage');
-        Route::get('/logout', 'BackOffice\LoginController@logout')->name('logout');
+        Route::get('logout', 'BackOffice\LoginController@logout')->name('logout');
+
+        Route::get('poles', 'PoleController@index')->name('poles');
+        Route::get('poles/create', 'PoleController@create')->name('poles.create');
+        Route::post('poles/create', 'PoleController@store')->name('poles.create');
     });
 });
