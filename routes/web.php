@@ -54,5 +54,6 @@ Route::name('admin.')->prefix('admin')->group(function () {
     // Routes only for admins
     Route::middleware('isAdmin')->group(function () {
         Route::get('', 'BackOffice\BackOfficeController@showHomepage')->name('homepage');
+        Route::get('/logout', 'BackOffice\LoginController@logout')->name('logout');
     });
 });
