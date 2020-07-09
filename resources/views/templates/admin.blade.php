@@ -19,11 +19,11 @@
 
     <div id="admin-wrapper" class="row h-100 justify-content-center">
     @if (\App\Admin::check(request()))
-        <div id="sidenav" class="bg-secondary col-xxxl-1 h-100 p-3 d-flex flex-column justify-content-between">
+        <div id="sidenav" class="bg-secondary col-lg-2 col-xxxl-1 h-100 p-3 d-flex flex-column justify-content-between">
             @include('components.admin.sidenav')
         </div>
 
-        <div id="content" class="col-11 p-3">
+        <div id="content" class="col-11 col-lg-10 p-3">
             <div id="content-header" class="d-flex justify-content-between">
                 <h1>@yield('admin.title')</h1>
                 @yield('admin.content.header.options')
@@ -32,7 +32,7 @@
             @yield('admin.content')
         </div>
     @else
-        <div id="login-wrapper" class="col-xxxl-5 h-100 d-flex flex-column justify-content-center">
+        <div id="login-wrapper" class="col-lg-4 col-xxxl-5 h-100 d-flex flex-column justify-content-center">
             @include('components.alerts.errors')
             @include('components.alerts.success')
 

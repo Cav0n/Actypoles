@@ -22,7 +22,7 @@
         <div class="col-md-3 col-xxxl-1">
             <img src="{{asset('images/logos/logo-actypoles.png')}}" class="w-100">
         </div>
-        <div class="col-md-5 col-xxxl-4">
+        <div class="col-md-5 col-xxxl-4 d-flex flex-column justify-content-center">
             <h1 class="h4">Actypoles-Thiers</h1>
             <p class="text-justify">
                 Sed vitae lobortis augue. Integer risus est, volutpat in ultricies vel, vehicula vitae diam. Curabitur
@@ -36,7 +36,7 @@
 
     <div class="row justify-content-center py-4">
 
-        <div class="col-md-5 col-xxxl-4">
+        <div class="col-md-5 col-xxxl-4 d-flex flex-column justify-content-center">
             <h1 class="h4">Bébés Lutins</h1>
             <p class="text-justify">
                 Morbi eu posuere dolor, eu rhoncus libero. Phasellus arcu turpis, mollis in mi sit amet, aliquam mattis
@@ -44,8 +44,10 @@
                 fermentum auctor. In hac habitasse platea dictumst. Maecenas efficitur ex ut est gravida commodo.
                 Mauris consectetur augue id nisi tempor, nec elementum massa convallis.
             </p>
-            <a href="" class="pr-3">En savoir plus</a>
-            <a href="" class="pl-3 border-left">Site internet</a>
+            <div class="d-flex">
+                <a href="" class="pr-3">En savoir plus</a>
+                <a href="" class="pl-3 border-left">Site internet</a>
+            </div>
         </div>
         <div class="col-md-3 col-xxxl-1">
             <img src="{{asset('images/logos/logo-bebes-lutins.png')}}" class="w-100">
