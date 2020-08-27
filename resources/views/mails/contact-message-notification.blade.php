@@ -1,0 +1,1 @@
+<p>Un visiteur du site a laissé un message à partir du formulaire de contact.</p>
